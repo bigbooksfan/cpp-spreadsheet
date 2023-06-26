@@ -1,25 +1,25 @@
 #pragma once
 
-#include <set>
-#include <unordered_map>
+#include <set> 
+#include <unordered_map> 
 
-#include "cell.h"
-#include "common.h"
+#include "cell.h" 
+#include "common.h" 
 
 class Cell;
 
 class Sheet : public SheetInterface {
-private:        // fields
+private:        // fields 
     Size size_;
     std::unordered_map<int, std::unordered_map<int, std::unique_ptr<Cell>>> data_;
     std::set<int> rows_;
     std::set<int> cols_;
 
-public:         // constructors
+public:         // constructors 
     Sheet() = default;
     ~Sheet();
 
-public:         // methods
+public:         // methods 
     void SetCell(Position pos, std::string text) override;
 
     const CellInterface* GetCell(Position pos) const override;
